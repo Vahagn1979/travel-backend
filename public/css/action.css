@@ -1,0 +1,217 @@
+.action h1 {
+    color: var(--text-color-1);
+    text-shadow: var(--text-shadow);
+    font-size: 42px;
+    margin-bottom: 30px;
+}
+
+.update-block, .add-block {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: 2px solid var(--body-bg);
+}
+
+.add-block {
+    padding-top: 50px;
+}
+
+.action .detail-subtitle {
+    text-align: center; 
+    color:teal; 
+    margin-top: 20px;
+    font-size: 32px;
+    text-shadow: var(--text-shadow);
+}
+
+.action .back-btn {
+    position: fixed;
+    top: 10px;
+    right: 300px;
+    font-size: 17px;
+    border: 2px solid var(--primary);
+    background: var(--primary);
+    padding: 7px 17px;
+    border-radius: 6px;
+    letter-spacing: .5px;
+    -webkit-text-stroke: .4px;
+    cursor: pointer;
+    z-index: 1001;
+    border: 2px solid var(--body-bg);
+
+    &:hover {
+        color: var(--primary);
+        background: var(--body-bg);
+    }
+
+    &:active {
+        transform: scale(1.1) rotate(-2deg);
+    }
+}
+
+.action .back-btn a {
+    color: var(--text-color-1);
+}
+
+.action .back-btn a:hover {
+    color: var(--primary);
+}
+
+.action form {
+    margin-top: 40px;
+}
+
+.action form label {
+    font-size: 18px;
+    letter-spacing: 2px;
+    -webkit-text-stroke: .5px;
+    display: block;
+    color: var(--text-color-1);
+    text-shadow: var(--text-shadow);
+    margin-block: 10px;
+}
+
+.action form label span {
+    color: red;
+}
+
+.action form .lang-selector {
+    appearance: none; 
+    display: block;
+    border: 1px solid;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 7px 9px;
+    font-size: 16px;
+    width: 500px;
+    cursor: pointer;
+}
+
+.action form input,
+.action form textarea {
+    display: block;
+    border: 1px solid #333;
+    padding: 5px 8px;
+    width: 500px;
+    font-size: 16px;
+    min-block-size: 20px;
+    outline: none;
+}
+
+.action form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.action form .image-box {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+
+}
+
+.action form input[type=file],
+.action form .image-preview {
+    border: none;
+    margin-top: 10px;
+}
+
+.action form .image-preview {
+    display: none;
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 1px solid #b5b3b3;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action form .image-preview.active {
+    display: block;
+}
+
+.action form button.submit, .action form button.submit1  {
+    position: absolute;
+    top: 10px;
+    right: 250px;
+    font-size: 17px;
+    border: 2px solid var(--primary);
+    background: var(--primary);
+    color: #fff;
+    padding: 7px 17px;
+    border-radius: 6px;
+    letter-spacing: .5px;
+    -webkit-text-stroke: .4px;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--primary);
+        background: var(--body-bg);
+    }
+}
+
+.update-block:focus-within,
+.add-block:focus-within {
+    border: 2px solid #5792f78b;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+/* ==============  add new links for footer labels ======================= */
+
+.social-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.social-table thead {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+}
+
+.social-table th,
+.social-table td {
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.social-table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.social-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.social-table input[type="text"],
+.social-table input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.add-links {
+    margin-top: 15px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background: #10b981;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.add-links:hover {
+    background: #059669;
+}
+
+.delete-row {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}

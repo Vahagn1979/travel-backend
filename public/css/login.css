@@ -1,0 +1,109 @@
+.auth {
+    background: var(--body-bg);
+    border: 1px solid var(--hairline-color);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 28em;
+    max-width: 400px;
+    margin: 100px auto;
+}
+
+.auth * {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif';
+}
+
+.auth .heading {
+    width: 100%;
+    background: #41768F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 16px; 
+}
+
+.auth h1 {
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #fff09a;
+    text-transform: uppercase;
+}
+
+.auth .content {
+    padding: 20px;
+    background: var(--body-bg);
+}
+
+ .auth .content .error-text {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+    border-radius: 4px;
+ }
+
+ .auth form .form-row {
+    padding: 4px 0;
+ }
+
+ .auth form .form-row label {
+    line-height: 2em;
+    font-size: 14px;
+    display: block;
+    color: var(--text-color-1);
+ }
+
+ .auth form .form-row input {
+    display: block;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid var(--hairline-color);
+    border-radius: 4px;
+    outline: 1px solid var(--hairline-color);
+    /* outline: none; */
+    font-size: 14px;
+}
+
+.auth form .form-row input:-webkit-autofill,
+.auth form .form-row input:-webkit-autofill:hover,
+.auth form .form-row input:-webkit-autofill:focus,
+.auth form .form-row input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--input-autofill) inset;
+    -webkit-text-fill-color: var(--text-color-1);
+}
+
+.auth form button {
+    margin-top: 1em;
+    display: block;
+    width: 100%;
+    padding: 7px;
+    background: #417690;
+    border-radius: 4px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+
+    &:hover {
+        background: #205067;
+    }
+}
+
+.auth form .login-password-field {
+    position: relative;
+}
+
+.auth form .login-password-field input {
+    padding-right: 35px;
+}
+
+.auth form .login-password-field  .password-img {
+    position: absolute;
+    width: 20px;
+    top: 55%;
+    right: 10px;
+    transform: translate(-50% -50%);
+    cursor: pointer;
+}

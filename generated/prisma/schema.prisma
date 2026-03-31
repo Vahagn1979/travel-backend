@@ -1,0 +1,140 @@
+model AboutPageIntro {
+  id          String   @id @default(uuid())
+  lang        String
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AboutPageTeamHeading {
+  id        String   @id @default(uuid())
+  lang      String
+  title     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AboutPageTeam {
+  id         String   @id @default(uuid())
+  lang       String
+  image      String
+  name       String
+  profession String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model ContactPageContent {
+  id                  String   @id @default(uuid())
+  lang                String
+  title               String
+  name_placeholder    String
+  email_placeholder   String
+  message_placeholder String
+  btn_text            String
+  successful_text     String
+  error_text          String
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+model FooterLabel {
+  id           String       @id @default(uuid())
+  lang         String
+  title        String
+  credit       String
+  social_links SocialLink[]
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+}
+
+model HomePagePackage {
+  id        String   @id @default(uuid())
+  lang      String
+  discount  String
+  image     String
+  title     String
+  price     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model HomePagePackagesHeading {
+  id        String   @id @default(uuid())
+  lang      String
+  title     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model HomePageSlider {
+  id          String   @id @default(uuid())
+  lang        String
+  img         String
+  title       String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Language {
+  id        String   @id @default(uuid())
+  code      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Logo {
+  id        String   @id @default(uuid())
+  title     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Navbar {
+  id        String   @id @default(uuid())
+  lang      String
+  title     String
+  url       String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SocialLink {
+  id            String      @id @default(uuid())
+  image         String
+  url           String
+  footerLabel   FooterLabel @relation(fields: [footerLabelId], references: [id], onDelete: Cascade)
+  footerLabelId String
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+}
+
+model User_session {
+  sid    String   @id
+  expire DateTime
+  sess   Json
+}
+
+model User {
+  id        String   @id @default(uuid())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}

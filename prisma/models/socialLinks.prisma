@@ -1,0 +1,9 @@
+model SocialLink {
+    id            String      @id @default(uuid())
+    image         String
+    url           String
+    footerLabel   FooterLabel @relation(fields: [footerLabelId], references: [id], onDelete: Cascade)
+    footerLabelId String
+    createdAt     DateTime    @default(now())
+    updatedAt     DateTime    @updatedAt
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Geist", sans-serif;
+    transition: all .25s linear;
+}
+
+body {
+    background-color: var(--body-bg);
+    /* overflow-y: scroll; */
+}
+
+.container {
+    padding: 40px 50px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 42px;
+}
+
+.title .version {
+      font-size: 14px;
+        padding: 3px 5px;
+        background-color: #009384;
+        border-radius: 6px;
+        color: #fff;
+}
+
+.descr {
+    margin-block: 10px;
+}
+
+.url-title {
+    margin-block: 10px;
+    font-size: 28px;
+}
+
+.url-list {
+    list-style-position: inside;
+}
+
+.url-list li {
+    margin-bottom: 5px;
+    text-indent: 20px;
+}
+
+.url-list a {
+    color: #007bff;
+    /* font-family: Consolas, monospace; */
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 22px;
+    font-weight: bold;
+}

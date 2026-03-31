@@ -1,0 +1,13 @@
+model FooterLabel {
+    id           String       @id @default(uuid())
+    lang         String
+    title        String
+    credit      String
+    social_links SocialLink[]
+    createdAt    DateTime     @default(now())
+    updatedAt    DateTime     @updatedAt
+}
+
+
+
+

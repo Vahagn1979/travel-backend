@@ -1,0 +1,13 @@
+model ContactPageContent {
+    id                  String   @id @default(uuid())
+    lang                String
+    title               String
+    name_placeholder    String
+    email_placeholder   String
+    message_placeholder String
+    btn_text            String
+    successful_text     String
+    error_text          String
+    createdAt           DateTime @default(now())
+    updatedAt           DateTime @updatedAt
+}

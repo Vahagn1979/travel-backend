@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+@import url("./header.css");
+@import url("./sidebar.css");
+@import url("./adminDashboard.css");
+@import url("./action.css");
+@import url("./admin.css");
+@import url("./login.css");
+
+:root {
+    --primary: #017fc2;
+    --primary-bg: #017fc2;
+    --body-bg: #f4f7fa;
+    --sidbar-bg: #f4f7fa;
+    --languages-bg: #b2c0d2;
+    --text-color-1: #000;
+    --text-color-2: #444;
+    --hairline-color: #ddd;
+    --action-color: #0000eea5;
+    --error-color: #ba2121;
+    --input-autofill: #E7EFFD;
+    --text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1), 0 0 20px rgba(1, 127, 194, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Geist", sans-serif;
+    transition: all .25s linear;
+}
+
+body {
+    background-color: var(--body-bg);
+    overflow-y: scroll;
+}
+
+body.active {
+     --primary-bg: #3899cd;
+    --body-bg: #121212;
+    --sidbar-bg: #201e1ec1;
+    --languages-bg: #334156;
+    --text-color-1: #fff;   
+    --text-color-2: #fff;
+    --hairline-color: #272727;
+    --action-color: #fff;
+    --error-color: #E25F5F;
+    --input-autofill: #272F3D; 
+}
+
+.content {
+    padding:25px 35px;
+}
+
+.content.active {
+    margin-top: 50px;
+    margin-left: 280px;
+}
+
+.heading .theme-switch {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+

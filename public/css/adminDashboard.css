@@ -1,0 +1,235 @@
+ .admin-dashboard-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+ }
+
+ .link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--primary);
+    padding: 10px 22px;
+    border-radius: 6px;
+    background: #fff;
+    font-weight: bold;
+
+    &:hover {
+        transform: translateY(-2px);
+        color: var(--text-color-1);
+        background: var(--body-bg);
+        border-color: var(--text-color-1);
+    }
+ }
+
+ .link-item a {
+    color: var(--primary);
+ }
+
+ .add-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+ }
+
+
+ .add-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+ }
+ 
+
+ .main-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-bg);
+    text-shadow: var(--text-shadow);
+ }
+
+ .block-1, .block-2 {
+    min-height: 30vh;
+ }
+ 
+ .head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: var(--body-bg);
+    padding: 45px 25px 20px 0;
+    border-radius: 6px;
+    margin-bottom: 45px;
+}
+
+.second-head {
+    position: sticky;
+    top: 58px;            
+    z-index: 10;          
+}
+
+ .head h1,
+ .head .title {
+    color: var(--text-color-1);
+    text-shadow: var(--text-shadow);
+}
+
+.head .right-side {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+ .head .create-btn,
+ .head .delete-btn,
+ .head .delete-btn1 {
+    font-size: 16px;
+    border: 2px solid var(--primary);
+    background: var(--primary);
+    color: #fff;
+    padding: 7px 17px;
+    border-radius: 6px;
+    transition: background .4s, color .4s;
+    
+    &:hover {
+        color: var(--primary);
+        background: var(--body-bg);
+    }
+}
+
+.head .delete-btn,
+.head .delete-btn1 {
+    display: none;
+    background-color: #DB3545;
+    border-color: #DB3545;
+    cursor: pointer;
+    
+    &:hover {
+        color: #DB3545;
+        background: var(--body-bg);
+    }
+}
+
+ .no-data-text {
+    font-size: 20px;
+    margin-top: -12px;
+    font-weight: bold;
+    color: var(--text-color-1);
+}
+
+.table-wrapper {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 100px;
+}
+
+.table-wrapper table {
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+.table-wrapper table tr:first-child {
+    background: var(--primary);
+    color: #fff;
+}
+
+.table-wrapper table th,
+.table-wrapper table td {
+    border: 1px solid #c7c3c3;
+    padding: 8px;
+    text-align: center;
+
+    &:first-child {
+        /* width: 7%; */
+        width: 45px;
+    }
+
+    &:nth-child(2) {
+        width: 7%;
+    }
+
+    &:last-child {
+        /* width: 13%; */
+        width: 100px;
+    }
+}
+
+.table-wrapper table td {
+    color: var(--text-color-1);
+    padding: 4px 0;
+}
+
+/* =============lang-filter=========== */
+
+.table-wrapper table .lang-filter,
+.table-wrapper table .lang-filter1 {
+    width: 13%;
+    position: relative;
+    cursor: pointer;
+}
+
+.table-wrapper table .lang-filter ul,
+.table-wrapper table .lang-filter1 ul {
+    border-inline: .2px solid #41768F; 
+    width: 102%;
+    position: absolute;
+    left: -2px;
+    top: 100%;
+    display: none;
+    flex-direction: column;
+}
+
+.table-wrapper table .lang-filter ul.active,
+.table-wrapper table .lang-filter1 ul.active {
+    display: flex;
+}
+
+.table-wrapper table .lang-filter ul li,
+.table-wrapper table .lang-filter1 ul li {
+    background-color: var(--languages-bg); 
+    /* border-bottom: 1px solid var(--text-color-1); */
+    border-bottom: 1px solid #41768F;
+    width: 100%;
+    height: 40px;
+    
+    &:hover {
+        background-color: #41768F;
+        border: 1px solid #41768F;
+    }
+}
+
+.table-wrapper table .lang-filter ul li a,
+.table-wrapper table .lang-filter1 ul li a {
+    display: block;
+    width: 100%;
+    padding-block: 5px;
+    font-weight: 500;
+    color: #fff;
+}
+/* ========================================================= */
+
+.table-wrapper table input[type=checkbox] {
+    accent-color: #DB3545;
+    width: 15px;
+    aspect-ratio: 1;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+.table-wrapper table img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+
+
+
+/* .table-wrapper table .action {
+    color: var(--action-color); 
+     padding: 0 2px;
+} */
