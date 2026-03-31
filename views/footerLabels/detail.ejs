@@ -1,0 +1,83 @@
+<div class="action">
+    <h1><%= title %></h1>
+
+    <div class="back-btn">
+        <a href="/admin/<%= activeRoute %>">Back</a>
+    </div>  
+
+    <div class="update-block">
+        <!-- <h2 class="detail-subtitle">Edit links</h2> -->
+        <form action="/admin/<%= activeRoute %>/edit/<%= data.id %>" method="post" enctype="multipart/form-data">
+            <label for="lang">Lang<span>*</span></label>
+            <select name="lang" id="lang" class="lang-selector" required>
+                <option value="<%= data.lang %>" selected><%= data.lang %></option>
+            </select>
+    
+            <label for="title">Title<span>*</span></label>
+            <input type="text" name="title" id="title" value="<%= data.title %>" required>
+    
+            <label for="credit">Credit<span>*</span></label>
+            <input type="text" name="credit" id="credit" value="<%= data.credit %>" required>
+    
+    
+            <table class="social-table">
+                <thead>
+                    <tr>
+                        <th>Url</th>
+                        <th>Icon</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="links-container">
+                    <% data?.social_links?.forEach((link, index) => { %>
+                    <tr class="add-new-link">
+                        <td>
+                            <input type="text" name="urls" value="<%= link.url %>" required>
+                            <input type="hidden" name="linkIds" value="<%= link.id %>">
+                        </td>
+                        <td>
+                            <input type="file" name="images_<%= index %>" accept="image/*" class="image-input">
+                            <input type="hidden" name="oldImages" value="<%= link.image %>">
+    
+                            <img 
+                                src="<%= link.image %>" 
+                                class="image-preview" 
+                                style="width:50px; display:block; background: linear-gradient(135deg, #4f46e5, #6366f1);"
+                            >
+                        </td>
+                        <td>
+                            <button type="button" class="delete-row">❌</button>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+    
+            <button type="submit" class="submit">Update</button>
+        </form>
+    </div>
+
+
+    <div class="add-block">
+        <!-- <h2 class="detail-subtitle">Add links</h2> -->
+        <form action="/admin/<%= activeRoute %>/addLink/<%= data.id %>" method="post" enctype="multipart/form-data">
+            <table class="social-table">
+                <thead>
+                    <tr>
+                        <th>Url</th>
+                        <th>Icon</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="add-links-container">
+                 
+                </tbody>
+            </table>
+    
+            <button type="button" class="add-links">➕ Add a new social link</button>
+    
+    
+            <button type="submit" class="submit1">Add link</button>
+        </form>
+    </div>
+</div>

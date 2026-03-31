@@ -1,0 +1,44 @@
+<% if (user) { %>
+    <div class="head">
+        <h1>Welcome to Travel Admin Panel!</h1>
+    </div>
+
+    <div class="admin-dashboard-links">
+        <div class="link-item">
+            <a href="/admin/logos">Logos</a>
+            <a href="/admin/logos/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>
+        </div>
+        <div class="link-item">
+            <a href="/admin/navbars">Navbars</a>
+            <a href="/admin/navbars/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>   
+        </div>
+        <div class="link-item">
+            <a href="/admin/languages">Languages</a>
+            <a href="/admin/languages/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>
+        </div>
+        <div class="link-item">
+            <a href="/admin/home-page-sliders">Home page sliders</a>
+            <a href="/admin/home-page-sliders/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>
+        </div>
+        <div class="link-item">
+            <a href="/admin/home-page-packages">Home page packages</a>
+            <a href="/admin/home-page-packages/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>
+        </div>
+        <div class="link-item">
+            <a href="/admin/about-page-intros">About page intros</a>
+            <a href="/admin/about-page-intros/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>
+        </div>
+        <div class="link-item">
+            <a href="/admin/about-page-teams">About page teams</a>
+            <a href="/admin/about-page-teams/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>
+        </div>
+        <div class="link-item">
+            <a href="/admin/contact-page-contents">Contact page contents</a>
+            <a href="/admin/contact-page-contents/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>
+        </div>
+        <div class="link-item">
+            <a href="/admin/footer-labels">Footer</a>
+            <a href="/admin/footer-labels/create" class="add-icon"><img src="/images/add.svg" alt="add">Add</a>
+        </div>
+    </div>
+<% } %>

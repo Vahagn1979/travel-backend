@@ -1,0 +1,44 @@
+<div class="action">
+    <h1><%= title %></h1>   
+
+    <div class="back-btn">
+        <a href="/admin/<%= activeRoute %>">Back</a>
+    </div>          
+
+    <div class="update-block">
+        <form action="/admin/<%= activeRoute %>/edit/<%= data.id %>" method="post">
+            <label for="lang">Lang<span>*</span></label>
+             <select name="lang" id="lang" class="lang-selector" required>
+                <% langs.forEach(elem => { %>
+                 <option 
+                    value="<%= elem.code %>"
+                    <%= data.lang === elem.code ? "selected" : "" %>
+                ><%= elem.code %></option>
+                <% }) %>
+            </select>
+    
+            <label for="title">Title<span>*</span></label>
+            <input type="text" name="title" id="title" value="<%= data.title %>" required>
+    
+             <label for="name">Name placeholder<span>*</span></label>
+            <input type="text" name="name_placeholder" id="name" value="<%= data.name_placeholder %>" required>
+    
+             <label for="email">Email placeholder<span>*</span></label>
+            <input type="text" name="email_placeholder" id="email" value="<%= data.email_placeholder %>" required>
+    
+            <label for="mess">Message placeholder<span>*</span></label>
+            <input type="text" name="message_placeholder" id="mess" value="<%= data.message_placeholder %>" required>
+    
+            <label for="btn">Button taxt<span>*</span></label>
+            <input type="text" name="btn_text" id="btn" value="<%= data.btn_text %>" required>
+    
+            <label for="success">Successful taxt<span>*</span></label>
+            <input type="text" name="successful_text" id="success" value="<%= data.successful_text %>" required>
+    
+            <label for="error">Error taxt<span>*</span></label>
+            <input type="text" name="error_text" id="error" value="<%= data.error_text %>" required>
+    
+            <button type="submit" class="submit">Update</button>
+        </form>
+    </div>
+</div>

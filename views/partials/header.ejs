@@ -1,0 +1,22 @@
+<% if (user) { %>
+    <header class="heading">
+        <a href="/" class="logo">TRAVEL</a>
+
+        <div class="right-side">
+            <div class="user-menu">
+                <img src="/images/user-avatar.svg" alt="user-avatar" class="user-avatar">
+            
+                <div class="dropdown-menu">
+                    <p class="dropdown-user">Hello, <%= user.username %></p>
+                    <a href="/admin/change-admin-name" class="dropdown-link">Change username</a>
+                    <a href="/admin/change-admin-password" class="dropdown-link">Change password</a>
+                    <a href="/admin/logout" class="dropdown-link logout-link">Logout</a>
+                </div>
+            </div>
+    
+            <button class="theme-switch">
+                <img src="/images/dark_mode.svg" alt="theme-switch images">
+            </button>
+        </div>
+    </header>
+<% } %>

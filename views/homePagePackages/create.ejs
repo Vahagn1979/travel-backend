@@ -1,0 +1,40 @@
+<div class="action">
+    <h1>
+        <%= title %>
+    </h1>
+
+    <div class="back-btn">
+        <a href="/admin/<%= activeRoute %>">Back</a>
+    </div>              
+
+    <div class="add-block">
+        <form action="/admin/<%= activeRoute %>/add" enctype="multipart/form-data" method="post">
+            <label for="lang">Lang<span>*</span></label>
+            <select name="lang" id="lang" class="lang-selector" required>
+                <option value="" disabled selected hidden>Choose language</option>
+                <% langs.forEach(elem=> { %>
+                    <option value="<%= elem.code %>">
+                        <%= elem.code %>
+                    </option>
+                    <% }) %>
+            </select>
+
+            <label for="discount">Discount<span>*</span></label>
+            <input type="text" name="discount" id="discount" required>
+
+            <label for="title">Title<span>*</span></label>
+            <input type="text" name="title" id="title" required>
+
+            <label for="price">Price<span>*</span></label>
+            <input type="text" name="price" id="price" required>
+
+            <label for="img">Image<span>*</span></label>
+            <input type="file" accept="image/*" name="image" id="img" required>
+
+            <!-- <input type="image" id="preview" src="" alt="image preview" class="image-preview"> -->
+            <img src="" alt="image preview" id="preview" class="image-preview">
+
+            <button type="submit" class="submit">Create</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Admin Panel - <%= title %></title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/headerActions.js" defer></script>
+    <script src="/js/theme_mode.js" defer></script>
+    <script src="/js/imagePreview.js" defer></script>
+    <script src="/js/bulkDelete.js" defer></script>
+    <script src="/js/bulkDelete1.js" defer></script>
+    <script src="/js/passwordType.js" defer></script>
+    <script src="/js/langFilter.js" defer></script>
+    <script src="/js/addLinks.js" defer></script>
+    <script src="/js/multiPreview.js" defer></script>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <%- include('partials/sidebar') %>
+    
+    <div class="content <%= user ? 'active' : '' %>" >
+        <%- body %>
+    </div>
+</body>
+</html>

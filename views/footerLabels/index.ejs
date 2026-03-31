@@ -1,0 +1,86 @@
+<h1 class="main-title">Footer</h1>
+
+<section class="block-1">
+    <div class="head second-head">
+        <h2 class="title"><%= title %></h2>
+    
+        <div class="right-side">
+            <form action="/admin/<%= activeRoute %>/bulk-delete" id="bulk-delete-form1" method="post">
+                <input type="hidden" name="ids" id="selected-ids1">
+                <button type="submit" id="delete-btn1" class="delete-btn1">
+                    Delete 0 selected items
+                </button>
+            </form>
+    
+            <a href="/admin/<%= activeRoute %>/create" class="create-btn">
+                Create new <%= title.toLowerCase() %>
+            </a>
+        </div>
+    </div>
+    
+    <% if (data.length) { %>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>
+                    <input type="checkbox" id="select-all1">
+                </th>
+                <th>N</th>
+                <th class="lang-filter">
+                    Select Language
+                    <ul >
+                        <% langs.forEach(elem => { %>
+                            <li>
+                                <a href="/admin/<%= activeRoute %>/?lang=<%= elem.code %>">
+                                    <%= elem.code %>
+                                </a>
+                            </li>
+                        <% }) %>
+                        <li>
+                            <a href="/admin/<%= activeRoute %>">all languages</a>
+                        </li>
+                    </ul>
+                </th>
+                <th>Title</th>
+                <th>Links</th>
+                <th>Detail</th>
+            </tr>
+            <% data.forEach((elem, index) => { %>
+                <tr>
+                    <td>
+                        <input 
+                            type="checkbox" 
+                            class="row-checkbox1" 
+                            value="<%= elem.id %>"
+                        >
+                    </td>
+                    <td><%= ++index %></td>
+                    <td><%= elem.lang %></td>
+                    <td><%= elem.title %></td>
+                     <td>
+                        <% elem.social_links.forEach(link => { %>
+                         <a href="<%= link.url %>" target="_blank">
+                            <img 
+                                src="<%= link.image %>" 
+                                alt="social link"
+                                style="width:50px; background: linear-gradient(135deg, #4f46e5, #6366f1);"
+                            >
+                        </a>
+                        <% }) %>
+                     </td>
+                    <td>
+                        <a href="/admin/<%= activeRoute %>/<%= elem.id %>" class="action">➡️</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+    <% } else { %>
+        <p class="no-data-text">No Data Yet</p>
+    <% } %>
+</section>
+
+
+
+
+  

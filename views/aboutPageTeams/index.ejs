@@ -1,0 +1,151 @@
+<h1 class="main-title"><%= title %></h1>
+<section class="block-1">
+    <div class="head">
+        <h2 class="title"><%= title1 %></h2>
+    
+        <div class="right-side">
+            <form action="/admin/<%= activeRoute1 %>/bulk-delete" id="bulk-delete-form1" method="post">
+                <input type="hidden" name="ids" id="selected-ids1">
+                <button type="submit" id="delete-btn1" class="delete-btn1">
+                    Delete 0 selected items
+                </button>
+            </form>
+    
+            <a href="/admin/<%= activeRoute1 %>/create" class="create-btn">
+                Create new <%= title1.toLowerCase() %>
+            </a>
+        </div>
+    </div>
+    
+    <% if (data1.length) { %>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>
+                    <input type="checkbox" id="select-all1">
+                </th>
+                <th>N</th>
+                <th class="lang-filter1">
+                    Select Language
+                    <ul >
+                        <% langs.forEach(elem => { %>
+                            <li>
+                                <a href="/admin/<%= activeRoute %>/?lang=<%= elem.code %>">
+                                    <%= elem.code %>
+                                </a>
+                            </li>
+                        <% }) %>
+                        <li>
+                            <a href="/admin/<%= activeRoute %>">all languages</a>
+                        </li>
+                    </ul>
+                </th>
+                <th>Title</th>
+                <th>Detail</th>
+            </tr>
+    
+            
+            <% data1.forEach((elem, index) => { %>
+                <tr>
+                    <td>
+                        <input 
+                            type="checkbox" 
+                            class="row-checkbox1" 
+                            value="<%= elem.id %>"
+                        >
+                    </td>
+                    <td><%= ++index %></td>
+                    <td><%= elem.lang %></td>
+                    <td><%= elem.title %></td>
+                    <td>
+                        <a href="/admin/<%= activeRoute1 %>/<%= elem.id %>" class="action">➡️</a>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+    <% } else { %>
+        <p class="no-data-text">No Data Yet</p>
+    <% } %>
+</section>
+<!-- ------------------------- block-2 ------------------------------------ -->
+<section class="block-2">
+    <div class="head second-head">
+        <h2 class="title"><%= title %></h2>
+    
+        <div class="right-side">
+            <form action="/admin/<%= activeRoute %>/bulk-delete" id="bulk-delete-form" method="post">
+                <input type="hidden" name="ids" id="selected-ids">
+                <button type="submit" id="delete-btn" class="delete-btn">
+                    Delete 0 selected items
+                </button>
+            </form>
+    
+            <a href="/admin/<%= activeRoute %>/create" class="create-btn">
+                Create new <%= title.toLowerCase() %>
+            </a>
+        </div>
+    </div>
+    
+    <% if (data.length) { %>
+    <div class="table-wrapper">
+        <table>
+            <tr>
+                <th>
+                    <input type="checkbox" id="select-all">
+                </th>
+                <th>N</th>
+                <th class="lang-filter">
+                    Select Language
+                    <ul >
+                        <% langs.forEach(elem => { %>
+                            <li>
+                                <a href="/admin/<%= activeRoute %>/?lang=<%= elem.code %>">
+                                    <%= elem.code %>
+                                </a>
+                            </li>
+                        <% }) %>
+                        <li>
+                            <a href="/admin/<%= activeRoute %>">all languages</a>
+                        </li>
+                    </ul>
+                </th>
+                <th>Name</th>
+                <th>Profession</th>
+                <th>Image</th>
+                <th>Detail</th>
+            </tr>
+    
+            
+            <% data.forEach((elem, index) => { %>
+                <tr>
+                    <td>
+                        <input 
+                            type="checkbox" 
+                            class="row-checkbox" 
+                            value="<%= elem.id %>"
+                        >
+                    </td>
+                    <td><%= ++index %></td>
+                    <td><%= elem.lang %></td>
+                    <td><%= elem.name %></td>
+                    <td><%= elem.profession %></td>
+                    <td style="padding: 4px 0 0 0;">
+                        <a href="<%= elem.image %>" target="_blank">
+                            <img src="<%= elem.image %>" alt="<%= elem.title %>">
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/admin/<%= activeRoute %>/<%= elem.id %>" class="action">➡️</a>
+                    </td>
+                </tr>
+            <% }) %>
+            
+        </table>
+    </div>
+    <% } else { %>
+        <p class="no-data-text">No Data Yet</p>
+    <% } %>
+</section>
+    
+     

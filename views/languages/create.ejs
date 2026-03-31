@@ -1,0 +1,18 @@
+<div class="action">
+    <h1>
+        <%= title %>
+    </h1>
+
+    <div class="back-btn">
+        <a href="/admin/<%= activeRoute %>">Back</a>
+    </div>          
+
+    <div class="add-block">
+        <form action="/admin/<%= activeRoute %>/add" method="post">
+            <label for="code">Code<span>*</span></label>
+            <input type="text" name="code" id="code" required>
+    
+            <button type="submit" class="submit">Create</button>
+        </form>
+    </div>
+</div>

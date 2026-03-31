@@ -1,0 +1,31 @@
+<div class="action">
+    <h1>
+        <%= title %>
+    </h1>
+
+    <div class="back-btn">
+        <a href="/admin/<%= activeRoute %>">Back</a>
+    </div>          
+    
+    <div class="add-block">
+        <form action="/admin/<%= activeRoute %>/add" method="post">
+            <label for="lang">Lang<span>*</span></label>
+            <select name="lang" id="lang" class="lang-selector" required>
+                <option value="" disabled selected>Choose language</option>
+                <% langs.forEach(elem=> { %>
+                    <option value="<%= elem.code %>">
+                        <%= elem.code %>
+                    </option>
+                    <% }) %>
+            </select>
+
+            <label for="title">Title<span>*</span></label>
+            <input type="text" name="title" id="title" required>
+
+            <label for="url">URL<span>*</span></label>
+            <input type="text" name="url" id="url" required>
+
+            <button type="submit" class="submit">Create</button>
+        </form>
+    </div>
+</div>
